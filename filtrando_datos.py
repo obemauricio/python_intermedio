@@ -78,6 +78,7 @@ def run():
     adults = list(map(lambda worker: worker["name"], adults)) #mapea a adults y sobreescribe.
     old_people = list(map(lambda worker: worker | {"old": worker["age"] > 70}, DATA))
         #old_pleople tiene una nueva funcion | que añade una nueva categoria al diccionario.
+    old_people = list(map(lambda worker: {**worker, **{"old": worker["age"] > 70}}, DATA))
     for worker in old_people:
         print(worker)
 
